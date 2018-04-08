@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jzj-Oc-eoK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="23a-az-Fmc">
+            <objects>
+                <viewController id="jzj-Oc-eoK" customClass="ViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q9r-nk-duT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="91e-LB-Dg2">
+                                <rect key="frame" x="0.0" y="33.5" width="375" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="1Cw-rn-vnr"/>
+                                    <constraint firstAttribute="height" constant="400" id="GgH-kw-SI6"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="VCb-8P-59F">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VCb-8P-59F" id="f8A-YM-MB1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jzj-Oc-eoK" id="sZn-Qb-Edf"/>
+                                    <outlet property="delegate" destination="jzj-Oc-eoK" id="fpo-k6-lcC"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHi-z6-Wg7">
+                                <rect key="frame" x="50" y="523.5" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0cm-Ce-eM4"/>
+                                    <constraint firstAttribute="width" constant="100" id="XiR-JN-c0s"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="jzj-Oc-eoK" eventType="touchUpInside" id="C5d-rU-btA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5Q-y8-6uR">
+                                <rect key="frame" x="225" y="523.5" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i00-jR-CXn"/>
+                                    <constraint firstAttribute="width" constant="100" id="iuZ-SP-zqs"/>
+                                </constraints>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="jzj-Oc-eoK" eventType="touchUpInside" id="0mx-rm-rTc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QVp-Ev-YdF" firstAttribute="trailing" secondItem="r5Q-y8-6uR" secondAttribute="trailing" constant="50" id="4n4-az-Vp1"/>
+                            <constraint firstItem="91e-LB-Dg2" firstAttribute="centerY" secondItem="Q9r-nk-duT" secondAttribute="centerY" constant="-100" id="AKG-Kc-3Ne"/>
+                            <constraint firstItem="r5Q-y8-6uR" firstAttribute="top" secondItem="91e-LB-Dg2" secondAttribute="bottom" constant="90" id="Byb-5v-fh8"/>
+                            <constraint firstItem="OHi-z6-Wg7" firstAttribute="top" secondItem="91e-LB-Dg2" secondAttribute="bottom" constant="90" id="Yd9-Wb-LaX"/>
+                            <constraint firstItem="91e-LB-Dg2" firstAttribute="centerX" secondItem="Q9r-nk-duT" secondAttribute="centerX" id="ZpU-eL-rvh"/>
+                            <constraint firstItem="OHi-z6-Wg7" firstAttribute="leading" secondItem="QVp-Ev-YdF" secondAttribute="leading" constant="50" id="gHa-HT-JVX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QVp-Ev-YdF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvE-r8-yBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94" y="84"/>
+        </scene>
+    </scenes>
+</document>
